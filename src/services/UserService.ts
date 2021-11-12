@@ -11,7 +11,7 @@ export default class UserService {
 
   public static async logout(token: string): Promise<void> {
     await axios.delete(UESR_API_URL, {
-      headers: { Authorization: `Beater ${token}` },
+      headers: { Authorization: `Bearer ${token}` },
     });
   }
 }
