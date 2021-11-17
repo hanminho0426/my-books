@@ -30,13 +30,13 @@ const List: React.FC<ListProps> = ({ books, loading, getBooks }) => {
         ]}
       />
       <Table
-        dataSource={[]}
+        dataSource={books || []}
         columns={[
           {
             title: "Book",
             dataIndex: "book",
             key: "book",
-            render: () => <div>book</div>,
+            render: (text, record) => <Book {...record} />,
           },
         ]}
         loading={books === null || loading}

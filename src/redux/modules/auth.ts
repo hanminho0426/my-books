@@ -1,10 +1,11 @@
+import { createActions, handleActions } from "redux-actions";
 import { takeEvery, put, call, select } from "redux-saga/effects";
 import { push } from "connected-react-router";
-import { createActions, handleActions } from "redux-actions";
 
-import TokenService from "../../services/TokenService";
+import { LoginReqType } from "../../types";
 import UserService from "../../services/UserService";
 import { AuthState, LoginReqType } from "../../types";
+import TokenService from "../../services/TokenService";
 
 const initialState: AuthState = {
   token: null,
